@@ -23,6 +23,8 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "Adicionar", urlPatterns = {"/Adicionar"})
 public class Adicionar extends HttpServlet {
+    
+    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -32,6 +34,8 @@ public class Adicionar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         HttpSession sessao = request.getSession();
         if (sessao.getAttribute("logado") == null) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/Entrar");
@@ -51,6 +55,7 @@ public class Adicionar extends HttpServlet {
             try {
                 Utils.inserirPizza(pizza);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
+                response.setContentType("UTF-8");
                 dispatcher.forward(request, response);
             } catch (Exception ex) {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");

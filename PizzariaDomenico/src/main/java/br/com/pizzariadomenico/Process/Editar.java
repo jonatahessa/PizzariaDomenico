@@ -30,6 +30,8 @@ public class Editar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         HttpSession sessao = request.getSession();
         if (sessao.getAttribute("logado") == null) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/Entrar");
@@ -49,6 +51,7 @@ public class Editar extends HttpServlet {
             try {
                 Utils.alterar(pizza);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
+                response.setContentType("UTF-8");
                 dispatcher.forward(request, response);
             } catch (Exception ex) {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");

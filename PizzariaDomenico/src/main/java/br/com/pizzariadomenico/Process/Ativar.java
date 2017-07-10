@@ -30,6 +30,8 @@ public class Ativar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         HttpSession sessao = request.getSession();
         if (sessao.getAttribute("logado") == null) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/Entrar");

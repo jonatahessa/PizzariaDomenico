@@ -26,6 +26,8 @@ public class GetSabores extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, Exception {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         List<Produto> pizzasComuns = Utils.ListarPizzasPaginaInicialComum();
         List<Produto> pizzasDoces = Utils.ListarPizzasPaginaInicialDoces();
         List<Produto> bebidas = Utils.ListarPizzasPaginaInicialBebidas();

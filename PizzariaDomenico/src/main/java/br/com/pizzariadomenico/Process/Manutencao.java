@@ -27,6 +27,8 @@ public class Manutencao extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, Exception {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         HttpSession sessao = request.getSession();
         if (sessao.getAttribute("logado") == null) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/Entrar");
@@ -35,6 +37,7 @@ public class Manutencao extends HttpServlet {
             List<Produto> pizzas = Utils.ListarPizzasManutencao();
             request.setAttribute("sabores", pizzas);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/manutencao.jsp");
+            response.setContentType("UTF-8");
             dispatcher.forward(request, response);
         }
     }
