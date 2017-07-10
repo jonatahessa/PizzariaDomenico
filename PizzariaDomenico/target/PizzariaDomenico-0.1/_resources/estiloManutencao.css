@@ -1,0 +1,186 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#sessaoprincipal {
+  height: 100%;
+  width: 100%;
+}
+
+#logout {
+  float: right;
+  width: 100%;
+}
+
+#logout button {
+  border: none;
+  display: block;
+  float: right;
+  margin: auto;
+  background-color: transparent;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #bd4745;
+}
+
+#titulo {
+  width: 100%;
+}
+
+#titulo h1 {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#pizzas {
+  width: 100%;
+}
+
+#tabelapizzas {
+  width: 60%;
+  display: block;
+  margin: auto;
+}
+
+#divnovo {
+  width: 60%;
+  height: 50px;
+  display: block;
+  margin: auto;
+}
+
+#novo {
+  float: right;
+}
+
+button {
+  width: 100px;
+}
+
+#janelanovo {
+  width: 40%;
+  height: 600px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  margin: auto;
+  display: none;
+  z-index: 2;
+  animation-name: exibir;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+#janelaeditar {
+  width: 40%;
+  height: 600px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  margin: auto;
+  display: none;
+  z-index: 2;
+  animation-name: exibir;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes exibir {
+  0% { visibility: hidden; opacity: 0; }
+  25% { visibility: visible; opacity: 1; }
+  75% { visibility: visible; opacity: 1; }
+}
+
+#janelanovo div {
+  width: 80%;
+}
+
+#janelaeditar div {
+  width: 80%;
+}
+
+#nevoa {
+  content: " ";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: none;
+  z-index: 1;
+}
+
+#formnovo {
+  width: 100%;
+  height: 100%;
+}
+
+#formeditar {
+  width: 100%;
+  height: 100%;
+}
+
+#formnovo h2 {
+  text-align: center;
+}
+
+#formeditar h2 {
+  text-align: center;
+}
+
+.camposform {
+  width: 80%;
+  margin: auto;
+}
+
+#descricao {
+  width: 80%;
+}
+
+#descricaoeditar {
+  width: 80%;
+}
+
+#descricao textarea {
+  width: 100%;
+}
+
+#descricaoeditar textarea {
+  width: 100%;
+}
+
+#botoesnovo {
+  width: 80%;
+  padding-top: 5%;
+  margin: auto;
+}
+
+#botoeseditar {
+  width: 80%;
+  padding-top: 5%;
+  margin: auto;
+}
+
+#botoesnovo button {
+  display: inline;
+  width: 49%;
+}
+
+#botoeseditar button {
+  display: inline;
+  width: 49%;
+}

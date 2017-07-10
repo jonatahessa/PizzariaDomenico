@@ -1,0 +1,13 @@
+br\com\pizzariadomenico\Process\Ativar.class
+br\com\pizzariadomenico\Process\Manutencao.class
+br\com\pizzariadomenico\Process\Logout.class
+br\com\pizzariadomenico\Process\Entrar.class
+br\com\pizzariadomenico\Process\GetSabores.class
+br\com\pizzariadomenico\Connection\ConnectionUtils.class
+br\com\pizzariadomenico\Process\Login.class
+br\com\pizzariadomenico\Process\Adicionar.class
+br\com\pizzariadomenico\Daos\DaoProduto.class
+br\com\pizzariadomenico\Process\Produto.class
+br\com\pizzariadomenico\Process\Utils.class
+br\com\pizzariadomenico\Process\Editar.class
+br\com\pizzariadomenico\Process\Remover.class
