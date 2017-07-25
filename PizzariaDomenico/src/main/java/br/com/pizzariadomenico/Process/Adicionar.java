@@ -42,11 +42,10 @@ public class Adicionar extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
             Produto pizza = new Produto();
-            if (request.getParameter("codigo").equalsIgnoreCase("")) {
+            if (request.getParameter("nome").equalsIgnoreCase("")) {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
                 dispatcher.forward(request, response);
             }
-            pizza.setCodigo(Integer.parseInt(request.getParameter("codigo")));
             pizza.setNome(request.getParameter("nome"));
             pizza.setDescricao(request.getParameter("descricao"));
             pizza.setPreco(request.getParameter("preco"));

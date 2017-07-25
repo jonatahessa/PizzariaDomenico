@@ -83,11 +83,6 @@
                     <h2>Novo</h2>
                 </div>
 
-                <div id="codigo" class="form-group camposform">
-                    <label for="codigo">Código</label>
-                    <input class="form-control inputsnovo" type="text" name="codigo"/>
-                </div>
-
                 <div id="nome" class="form-group camposform">
                     <label for="nome">Nome</label>
                     <input class="form-control inputsnovo" type="text" name="nome"/>
