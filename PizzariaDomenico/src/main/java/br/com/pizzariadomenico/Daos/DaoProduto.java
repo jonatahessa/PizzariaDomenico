@@ -87,20 +87,19 @@ public class DaoProduto {
     public static void inserir(Produto pizza)
             throws SQLException, Exception {
 
-        String sql = "INSERT INTO Pizzas (ID, Nome, Descricao, Preco, Ativo, Tipo) "
-                + "VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Pizzas (Nome, Descricao, Preco, Ativo, Tipo) "
+                + "VALUES (?, ?, ?, ?, ?)";
         Connection connection = null;
         PreparedStatement statement = null;
         try {
             connection = ConnectionUtils.getConnection();
             statement = connection.prepareStatement(sql);
 
-            statement.setInt(1, pizza.getCodigo());
-            statement.setString(2, pizza.getNome());
-            statement.setString(3, pizza.getDescricao());
-            statement.setString(4, pizza.getPreco());
-            statement.setString(5, "SIM");
-            statement.setString(6, pizza.getTipo());
+            statement.setString(1, pizza.getNome());
+            statement.setString(2, pizza.getDescricao());
+            statement.setString(3, pizza.getPreco());
+            statement.setString(4, "SIM");
+            statement.setString(5, pizza.getTipo());
             System.out.println(statement.toString());
 
             System.out.println("Executando COMANDO SQL: " + sql);
@@ -197,7 +196,7 @@ public class DaoProduto {
     
     public static boolean verificarUsuario (String login, String senha) throws
             SQLException, Exception {
-        String sql = "SELECT * FROM Usuarios"
+        String sql = "SELECT * FROM Usuario"
                 + " WHERE Username = ?"
                 + " AND Password = ?;";
         Connection connection = null;
