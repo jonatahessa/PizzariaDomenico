@@ -35,6 +35,10 @@ public class GetSabores extends HttpServlet {
         request.setAttribute("salgadas", pizzasComuns);
         request.setAttribute("pizzasdoces", pizzasDoces);
         request.setAttribute("bebidas", bebidas);
+        for (Produto prod : promo){
+            String promoConvert = prod.getDescricao().replaceAll("\n", "<br/>");
+            prod.setDescricao(promoConvert);
+        }
         request.setAttribute("promocoes", promo);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/index.jsp");
         dispatcher.forward(request, response);

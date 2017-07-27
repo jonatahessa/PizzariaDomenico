@@ -113,6 +113,38 @@ section {
     max-width: 450px;
 }
 
+.paineispromo {
+  border: 1px solid;
+  border-color: #a6a0a0;
+  width: 30%;
+  height: 250px;
+  display: inline-block;
+  text-align: center;
+  font-family: Calibri;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.paineispromo h3 {
+  margin-top: 5%;
+  font-size: 150%;
+  font-weight: bolder;
+  color: #a6a0a0;
+}
+
+.paineispromo p {
+  font-size: 120%;
+  line-height: 120%;
+}
+
+.paineispromo p:last-of-type {
+  color: #f72b2f;
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+  font-size: 150%;
+  margin-top: 2%;
+}
+
 .mostrarsalgadas {
     width: 100%;
     height: auto;
