@@ -41,7 +41,7 @@
                 <p>Todos os recursos são colocados à disposição dos funcionários, para que a filosofia desde a fundação continue: SERVIR PIZZAS COM DEDICAÇÃO, CONHECIMENTO E ALEGRIA.</p>
             </div>
 
-            <div class="sessoes" id="promocoes">
+            <div class="sessoes" id="sessaopromocoes">
               <h1 class="titulos">Promoções</h1>
               <hr/>
               <c:forEach var="promo" items="${promocoes}">
