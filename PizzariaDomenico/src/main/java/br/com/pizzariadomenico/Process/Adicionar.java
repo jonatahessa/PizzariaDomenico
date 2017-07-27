@@ -23,8 +23,6 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "Adicionar", urlPatterns = {"/Adicionar"})
 public class Adicionar extends HttpServlet {
-    
-    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,24 +39,28 @@ public class Adicionar extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/Entrar");
             dispatcher.forward(request, response);
         } else {
-            Produto pizza = new Produto();
-            if (request.getParameter("nome").equalsIgnoreCase("")) {
+            if (request.getParameter("nome").equalsIgnoreCase("") || request.getParameter("nome") == null) {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
                 dispatcher.forward(request, response);
-            }
-            pizza.setNome(request.getParameter("nome"));
-            pizza.setDescricao(request.getParameter("descricao"));
-            pizza.setPreco(request.getParameter("preco"));
-            pizza.setTipo(request.getParameter("tipo"));
+            } else {
+                Produto produto = new Produto();
+                produto.setNome(request.getParameter("nome"));
+                produto.setDescricao(request.getParameter("descricao"));
+                produto.setPreco(request.getParameter("preco"));
+                produto.setTipo(request.getParameter("tipo"));
+                request.setAttribute("nome", null);
+                request.setAttribute("descricao", null);
+                request.setAttribute("preco", null);
+                request.setAttribute("tipo", null);
 
-            try {
-                Utils.inserirPizza(pizza);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
-                response.setContentType("UTF-8");
-                dispatcher.forward(request, response);
-            } catch (Exception ex) {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
-                dispatcher.forward(request, response);
+                try {
+                    Utils.inserirPizza(produto);
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
+                    request.getRequestDispatcher("/Manutencao").forward(request, response);
+                } catch (Exception ex) {
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
+                    dispatcher.forward(request, response);
+                }
             }
         }
     }

@@ -20,6 +20,7 @@
                     <li><button type="button" id="buttoncontato">Contato</button></li>
                     <li><button type="button" id="buttonlocalizacao">Localização</button></li>
                     <li><button type="button" id="buttoncardapio">Cardápio</button></li>
+                    <li><button type="button" id="buttonpromocoes">Promoções</button></li>
                     <li><button type="button" id="buttonnossacasa">Nossa Casa</button></li>
                     <li><button type="button" id="buttonhome">Home</button></li>
                 </ul>
@@ -38,6 +39,18 @@
                 <p>Em 1999, Carlos de Toledo Domenico criou a PIZZARIA DOMENICO, unindo a tradição da pizza com a sofisticação informal. E não parou de crescer, evoluir, adotando o lema: “Atender à expectativa dos clientes” como sinônimo de qualidade.</p>
                 <p>A localização tornou-se privilegiada: Haddock Lobo X Alameda Tietê, a porta de entrada dos Jardins. O investimento constante nas instalações, produtos e serviços, faz com que a DOMENICO seja considerada um dos clássicos, na terra das pizzarias.</p>
                 <p>Todos os recursos são colocados à disposição dos funcionários, para que a filosofia desde a fundação continue: SERVIR PIZZAS COM DEDICAÇÃO, CONHECIMENTO E ALEGRIA.</p>
+            </div>
+
+            <div class="sessoes" id="promocoes">
+              <h1 class="titulos">Promoções</h1>
+              <hr/>
+              <c:forEach var="promo" items="${promocoes}">
+                <div class="paineispromo">
+                  <h3>${promo.nome}</h3>
+                  <p>${promo.descricao}</p>
+                  <p>${promo.preco}</p>
+                </div>
+              </c:forEach>
             </div>
 
             <div class="sessoes" id="sessaocardapio">

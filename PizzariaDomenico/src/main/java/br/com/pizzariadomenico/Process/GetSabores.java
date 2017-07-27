@@ -31,9 +31,11 @@ public class GetSabores extends HttpServlet {
         List<Produto> pizzasComuns = Utils.ListarPizzasPaginaInicialComum();
         List<Produto> pizzasDoces = Utils.ListarPizzasPaginaInicialDoces();
         List<Produto> bebidas = Utils.ListarPizzasPaginaInicialBebidas();
+        List<Produto> promo = Utils.ListarPizzasPaginaInicialPromocoes();
         request.setAttribute("salgadas", pizzasComuns);
         request.setAttribute("pizzasdoces", pizzasDoces);
         request.setAttribute("bebidas", bebidas);
+        request.setAttribute("promocoes", promo);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/index.jsp");
         dispatcher.forward(request, response);
     }

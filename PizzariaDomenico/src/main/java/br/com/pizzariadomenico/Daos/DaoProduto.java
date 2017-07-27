@@ -83,6 +83,14 @@ public class DaoProduto {
 
         return executarConsulta(sql);
     }
+    
+    public static List<Produto> listarPaginaInicialPromocoes()
+            throws SQLException, Exception {
+        String sql = "SELECT * FROM Pizzas WHERE Ativo = 'SIM' AND "
+                + "Tipo = 'PROMOCAO' ORDER BY ID;";
+
+        return executarConsulta(sql);
+    }
 
     public static void inserir(Produto pizza)
             throws SQLException, Exception {

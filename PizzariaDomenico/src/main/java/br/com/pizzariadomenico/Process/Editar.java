@@ -51,7 +51,6 @@ public class Editar extends HttpServlet {
             try {
                 Utils.alterar(pizza);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
-                response.setContentType("UTF-8");
                 dispatcher.forward(request, response);
             } catch (Exception ex) {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Manutencao");
